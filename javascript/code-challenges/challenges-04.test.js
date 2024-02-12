@@ -28,7 +28,9 @@ Prove that the original people array is unchanged
 ------------------------------------------------------------------------------------------------ */
 
 const addPeople = (arr) => {
-  // Solution code here...
+  const newArr = ['Odie', ...arr, 'Garfield'];
+
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
