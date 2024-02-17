@@ -8,7 +8,10 @@ Write a function that finds the maximum value in an array.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // Solution code here...
+  let max = 0;
+  arr.forEach(element => {element > max ? max = element : {};});
+
+  return max;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,7 +27,9 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  let properties = Object.keys(obj);
+
+  return properties;
 };
 
 /* ------------------------------------------------------------------------------------------------
