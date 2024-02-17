@@ -123,7 +123,7 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  arr.forEach(obj => Object.entries(obj).forEach(([key, value]) => key === "house" ? houses.push(value) : {}));
+  arr.forEach(obj => Object.entries(obj).forEach(([key, value]) => key === 'house' ? houses.push(value) : {}));
   return houses;
 };
 
@@ -140,8 +140,10 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let hasChildren = false;
+  arr.forEach(obj => Object.values(obj).length === 4 && Object.values(obj)[0] === character ? hasChildren = true : {});
 
+  return hasChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
