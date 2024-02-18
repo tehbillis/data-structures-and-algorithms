@@ -8,7 +8,10 @@ Write a function that finds the maximum value in an array.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // Solution code here...
+  let max = 0;
+  arr.forEach(element => {element > max ? max = element : {};});
+
+  return max;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,7 +27,9 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  let properties = Object.keys(obj);
+
+  return properties;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,7 +41,10 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  let found = false;
+  Object.values(obj).forEach(item => {item === value ? found = true : {};});
+
+  return found;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,7 +67,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  return Object.entries(obj).map(([key, value]) => `${key}: ${value}`);
 };
 
 
@@ -115,7 +123,7 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.forEach(obj => Object.entries(obj).forEach(([key, value]) => key === 'house' ? houses.push(value) : {}));
   return houses;
 };
 
@@ -132,8 +140,10 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let hasChildren = false;
+  arr.forEach(obj => Object.keys(obj).includes('children') && Object.values(obj)[0] === character ? hasChildren = true : {});
 
+  return hasChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
