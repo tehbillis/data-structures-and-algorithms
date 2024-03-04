@@ -277,7 +277,10 @@ const snorlaxData = {
 };
 
 const extractStats = (snorlaxData) => {
-  // Solution code here...
+  return snorlaxData.stats.reduce((newStat, stat) => {
+    newStat[stat.stat.name] = stat.baseStat;
+    return newStat;
+  }, {});
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -366,7 +369,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an object that contains the names of each stat as individual keys and the respective baseStats as values to those keys.', () => {
     expect(extractStats(snorlaxData)).toStrictEqual({'speed': 30, 'special-defense': 110, 'special-attack': 65});
   });
