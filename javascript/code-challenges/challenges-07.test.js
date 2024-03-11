@@ -53,7 +53,7 @@ HINT: Beware... JS default is "Lexical" ordering.
 
 const sortNumbers = (arr) => {
   return arr.sort((a,b) => {
-    a > b;
+    return a - b;
   });
 };
 
