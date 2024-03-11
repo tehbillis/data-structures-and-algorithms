@@ -66,7 +66,9 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
-  // Solution code here...
+  return arr.sort((a,b) => {
+    return b - a;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
