@@ -147,7 +147,13 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let treats = 0;
+
+  arr.forEach(errand => {
+    errand.items.forEach(item => (item.name === 'Treats')? treats += item.quantity : '');
+  });
+
+  return treats;
 };
 
 /* ------------------------------------------------------------------------------------------------
